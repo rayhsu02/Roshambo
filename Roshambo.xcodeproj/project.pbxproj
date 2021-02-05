@@ -15,6 +15,7 @@
 		FB89038C25CD68110057A379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB89038A25CD68110057A379 /* LaunchScreen.storyboard */; };
 		FB89039725CD68110057A379 /* RoshamboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89039625CD68110057A379 /* RoshamboTests.swift */; };
 		FB8903A225CD68110057A379 /* RoshamboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8903A125CD68110057A379 /* RoshamboUITests.swift */; };
+		FB8903B325CD6C100057A379 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8903B225CD6C100057A379 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FB89039D25CD68110057A379 /* RoshamboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshamboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8903A125CD68110057A379 /* RoshamboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboUITests.swift; sourceTree = "<group>"; };
 		FB8903A325CD68110057A379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8903B225CD6C100057A379 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FB89038825CD68110057A379 /* Assets.xcassets */,
 				FB89038A25CD68110057A379 /* LaunchScreen.storyboard */,
 				FB89038D25CD68110057A379 /* Info.plist */,
+				FB8903B225CD6C100057A379 /* ResultViewController.swift */,
 			);
 			path = Roshambo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				FB89038425CD680F0057A379 /* ViewController.swift in Sources */,
 				FB89038025CD680F0057A379 /* AppDelegate.swift in Sources */,
 				FB89038225CD680F0057A379 /* SceneDelegate.swift in Sources */,
+				FB8903B325CD6C100057A379 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
