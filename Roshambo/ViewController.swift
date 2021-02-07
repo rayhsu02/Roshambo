@@ -16,11 +16,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func randomValue() -> Int{
+       let value = arc4random() % 4
+        return Int(value)
+    }
 
     @IBAction func rockbutton_press(_ sender: Any) {
-        let nextController = ResultViewController()
+        let nextController = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+        nextController.imageIdx = randomValue()
         present(nextController, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func paperbutton_press(_ sender: Any) {
+        
+        performSegue(withIdentifier: "viewResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "viewResult"){
+            let controller = segue.destination as! ResultViewController
+            controller.imageIdx = randomValue()
+        }
     }
     
 }

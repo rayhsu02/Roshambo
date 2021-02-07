@@ -8,15 +8,23 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-
+    
+    let imageArray = ["itsATie", "PaperCoversRock", "RockCrushesScissors", "ScissorsCutPaper"]
+    var imageIdx = 0
+    
+    @IBOutlet weak var resultImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Resut view controller")
+        resultImage.image = UIImage(named: imageArray[imageIdx])
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func playagain_button_press(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

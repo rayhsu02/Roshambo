@@ -40,6 +40,9 @@
                                                     <constraint firstAttribute="height" constant="65" id="utn-96-j4N"/>
                                                 </constraints>
                                                 <state key="normal" image="paper"/>
+                                                <connections>
+                                                    <action selector="paperbutton_press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="49g-GH-DUL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qL-Zm-Azb" userLabel="ScissorButton">
                                                 <rect key="frame" x="157" y="0.0" width="75" height="65"/>
@@ -48,6 +51,9 @@
                                                     <constraint firstAttribute="height" constant="65" id="a3M-kz-VZo"/>
                                                 </constraints>
                                                 <state key="normal" image="scissors"/>
+                                                <connections>
+                                                    <segue destination="jJ7-xd-nCW" kind="show" id="fBf-eb-aqh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -75,6 +81,7 @@
                         <outlet property="paperbutton" destination="1An-GN-uFw" id="dKJ-m1-LXz"/>
                         <outlet property="rockbutton" destination="Yzs-h7-80t" id="4SV-xI-yqB"/>
                         <outlet property="scissorbutton" destination="4qL-Zm-Azb" id="Ifz-ry-5Hg"/>
+                        <segue destination="jJ7-xd-nCW" kind="show" identifier="viewResult" id="FNA-Ti-uzD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,34 +93,65 @@
             <objects>
                 <viewController storyboardIdentifier="ResultViewController" id="jJ7-xd-nCW" customClass="ResultViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KMT-iQ-xwH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2P-zE-Qkj">
-                                <rect key="frame" x="162.5" y="437.5" width="89" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="WBM-sE-GYc"/>
-                                    <constraint firstAttribute="width" constant="89" id="frQ-yQ-iyk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="4XD-2j-SDW">
+                                <rect key="frame" x="87" y="250.5" width="240" height="341"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="0TD-gF-IDx">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="OdA-B4-CKi"/>
+                                            <constraint firstAttribute="height" constant="128" id="td3-4M-ucD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2P-zE-Qkj">
+                                        <rect key="frame" x="75.5" y="209" width="89" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="WBM-sE-GYc"/>
+                                            <constraint firstAttribute="width" constant="89" id="frQ-yQ-iyk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-Hx-8bN">
+                                        <rect key="frame" x="85" y="311" width="70" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="H7s-TZ-3rk"/>
+                                            <constraint firstAttribute="width" constant="70" id="eNL-68-JKp"/>
+                                        </constraints>
+                                        <state key="normal" title="Play again"/>
+                                        <connections>
+                                            <action selector="playagain_button_press:" destination="jJ7-xd-nCW" eventType="touchUpInside" id="NCg-vw-ez6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qi5-Yk-6xE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="f2P-zE-Qkj" firstAttribute="centerY" secondItem="KMT-iQ-xwH" secondAttribute="centerY" id="Jfp-Mp-FC0"/>
-                            <constraint firstItem="f2P-zE-Qkj" firstAttribute="centerX" secondItem="KMT-iQ-xwH" secondAttribute="centerX" id="NgY-WL-HeN"/>
+                            <constraint firstItem="4XD-2j-SDW" firstAttribute="centerY" secondItem="KMT-iQ-xwH" secondAttribute="centerY" id="0sS-L4-rTU"/>
+                            <constraint firstItem="4XD-2j-SDW" firstAttribute="centerX" secondItem="KMT-iQ-xwH" secondAttribute="centerX" id="gdg-hM-OSe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xEI-5d-8rd"/>
+                    <connections>
+                        <outlet property="resultImage" destination="0TD-gF-IDx" id="VZP-Oo-iaL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgg-f9-FyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="875" y="94"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fBf-eb-aqh"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
