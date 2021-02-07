@@ -19,13 +19,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="Adb-PR-8Fc">
                                 <rect key="frame" x="91" y="306.5" width="232" height="283"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzs-h7-80t" userLabel="RockButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzs-h7-80t" userLabel="Rock">
                                         <rect key="frame" x="78.5" y="0.0" width="75" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="FwM-is-F5f"/>
                                             <constraint firstAttribute="height" constant="65" id="qz7-V1-MER"/>
                                         </constraints>
-                                        <state key="normal" image="rock"/>
+                                        <state key="normal" title="Rock" image="rock"/>
                                         <connections>
                                             <action selector="rockbutton_press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C4P-bf-fhW"/>
                                         </connections>
@@ -33,26 +33,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="RKc-5o-gto">
                                         <rect key="frame" x="0.0" y="131" width="232" height="65"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1An-GN-uFw" userLabel="PaperButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1An-GN-uFw" userLabel="Paper">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="fkK-Ll-n6r"/>
                                                     <constraint firstAttribute="height" constant="65" id="utn-96-j4N"/>
                                                 </constraints>
-                                                <state key="normal" image="paper"/>
+                                                <state key="normal" title="Paper" image="paper"/>
                                                 <connections>
                                                     <action selector="paperbutton_press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="49g-GH-DUL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qL-Zm-Azb" userLabel="ScissorButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qL-Zm-Azb" userLabel="Scissors">
                                                 <rect key="frame" x="157" y="0.0" width="75" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="HRB-cz-oRN"/>
                                                     <constraint firstAttribute="height" constant="65" id="a3M-kz-VZo"/>
                                                 </constraints>
-                                                <state key="normal" image="scissors"/>
+                                                <state key="normal" title="Scissors" image="scissors"/>
                                                 <connections>
-                                                    <segue destination="jJ7-xd-nCW" kind="show" id="fBf-eb-aqh"/>
+                                                    <segue destination="jJ7-xd-nCW" kind="presentation" identifier="viewResult" id="5iy-MH-Ucc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -81,7 +81,6 @@
                         <outlet property="paperbutton" destination="1An-GN-uFw" id="dKJ-m1-LXz"/>
                         <outlet property="rockbutton" destination="Yzs-h7-80t" id="4SV-xI-yqB"/>
                         <outlet property="scissorbutton" destination="4qL-Zm-Azb" id="Ifz-ry-5Hg"/>
-                        <segue destination="jJ7-xd-nCW" kind="show" identifier="viewResult" id="FNA-Ti-uzD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="4XD-2j-SDW">
-                                <rect key="frame" x="87" y="250.5" width="240" height="341"/>
+                                <rect key="frame" x="87" y="199.5" width="240" height="443"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="0TD-gF-IDx">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -106,18 +105,28 @@
                                             <constraint firstAttribute="height" constant="128" id="td3-4M-ucD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2P-zE-Qkj">
-                                        <rect key="frame" x="75.5" y="209" width="89" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUM-Hy-4Jd">
+                                        <rect key="frame" x="20" y="209" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="1Uf-Np-71E"/>
+                                            <constraint firstAttribute="width" constant="200" id="D3Q-hc-Knb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2P-zE-Qkj">
+                                        <rect key="frame" x="20" y="311" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="WBM-sE-GYc"/>
-                                            <constraint firstAttribute="width" constant="89" id="frQ-yQ-iyk"/>
+                                            <constraint firstAttribute="width" constant="200" id="frQ-yQ-iyk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-Hx-8bN">
-                                        <rect key="frame" x="85" y="311" width="70" height="30"/>
+                                        <rect key="frame" x="85" y="413" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="H7s-TZ-3rk"/>
                                             <constraint firstAttribute="width" constant="70" id="eNL-68-JKp"/>
@@ -139,7 +148,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="xEI-5d-8rd"/>
                     <connections>
+                        <outlet property="matchNameLabel" destination="JUM-Hy-4Jd" id="5Kr-ht-7sR"/>
                         <outlet property="resultImage" destination="0TD-gF-IDx" id="VZP-Oo-iaL"/>
+                        <outlet property="reultLabel" destination="f2P-zE-Qkj" id="koc-LU-KAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgg-f9-FyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,9 +158,6 @@
             <point key="canvasLocation" x="875" y="94"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fBf-eb-aqh"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
